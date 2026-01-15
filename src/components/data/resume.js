@@ -1,17 +1,17 @@
 // --- DATA ---
 const CONTACT = {
     home: { 
-        title: "BACKEND ENGINEER", 
-        status: "OPEN TO WORK — FULL TIME / INTERNSHIP",
+        title: "SOFTWARE ENGINEER", 
+        status: "OPEN TO WORK",
         level: "ENTRY LEVEL — 2025",
         details: {
-        bio: "I’m Yash Patkar, a Backend Software Engineer with 4 months of hands-on experience working on production APIs using Python and Django REST Framework. I focus on schema design, query optimization, and building reliable backend systems, and I’m comfortable contributing to full-stack features with Vue.js and React when required. I also explore practical LLM integrations to improve development workflows.",
+        bio: "I’m Yash Patkar, a Backend Software Engineer with hands-on experience working on production APIs using Python and Django REST Framework. I focus on schema design, query optimization, and building reliable backend systems, and I’m comfortable contributing to full-stack features with Vue.js and React when required. I also explore practical LLM integrations to improve development workflows.",
         education: "B.Sc. IT — D. G. Ruparel College (2022–2025)",
         gpa: "9.4 / 10",
         address: "Mumbai, Maharashtra, India 400016",
         achievements: [
-            "2nd Place — DotTech Hackathon 2024 (DGRUPAREL)",
-            "3rd Place — Code Relay Event 2025 (VPPCOEVA)"
+            "1st Place — DotTech Hackathon 2025 (DGRUPAREL)",
+            "2nd Place — Code Relay Event 2025 (VPPCOEVA)"
         ]
         }
     },
@@ -21,12 +21,12 @@ const CONTACT = {
         hook: "Designing scalable APIs and data-driven backend systems.",
         categories: ["Languages", "Backend", "Databases", "Frontend", "Tools", "Others"], 
         details: [
-        { cat: "Languages", items: "Python, JavaScript, Java, C, C++" },
-        { cat: "Backend", items: "Django, Django REST Framework, Flask, FastAPI, Node.js, Express.js" },
+        { cat: "Languages", items: "Python, Java, C, C++, JavaScript," },
+        { cat: "Backend", items: "Django REST Framework, Flask, FastAPI, Node.js, Express.js" },
         { cat: "Databases", items: "PostgreSQL, MySQL, SQLite, Redis" },
         { cat: "Frontend", items: "Vue.js, React.js, HTML, CSS, Tailwind, Bootstrap" },
         { cat: "Tools", items: "Git, GitHub, Linux, Docker, Postman" },
-        { cat: "Others", items: "REST APIs, SQL, JSON, Data Structures & Algorithms, OOP, API Performance, Debugging" }        
+        { cat: "Others", items: "REST APIs, SQL, JSON, Data Structures & Algorithms, OOP, API Performance, Debugging, LangChain" }        
         ]
     },
 

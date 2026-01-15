@@ -10,7 +10,7 @@ const ExperienceSection = () => {
         <section className="h-screen w-screen flex items-center justify-center px-10 md:px-32 shrink-0 border-r border-white/5">
             <div className="max-w-5xl">
                 <FadeIn>
-                    <h2 className="font-display text-6xl md:text-8xl text-white mb-16">Internships</h2>
+                    <h2 className="font-display text-6xl md:text-8xl text-white mb-16">Work</h2>
                 </FadeIn>
                 <div className="space-y-12 border-l border-white/10 pl-8">
                     {CONTACT.experience.map((exp, i) => (

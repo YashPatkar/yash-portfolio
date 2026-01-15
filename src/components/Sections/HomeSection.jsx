@@ -15,10 +15,10 @@ const HomeSection = ({ setShowDetails }) => {
                         </span>
                         {CONTACT.home.status}
                     </div>
-                    <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-highlight/10 border border-highlight/30 text-highlight font-mono text-xs font-bold tracking-widest w-fit">
+                    {/* <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-highlight/10 border border-highlight/30 text-highlight font-mono text-xs font-bold tracking-widest w-fit">
                         <Briefcase size={12} />
                         {CONTACT.home.level}
-                    </div>
+                    </div> */}
                 </div>
 
                 <h1 className="font-display text-[15vw] leading-[0.8] text-white">
@@ -29,7 +29,7 @@ const HomeSection = ({ setShowDetails }) => {
                     <div className="animate-pulse">
                         <div className="w-3 h-3 bg-red-500 rounded-full"></div>
                     </div>
-                    BACKEND ENGINEER
+                    SOFTWARE ENGINEER
                 </div>
                 
                 <div className="mt-12 flex items-center gap-6">
