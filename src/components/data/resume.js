@@ -5,13 +5,13 @@ const CONTACT = {
         status: "OPEN TO WORK",
         level: "ENTRY LEVEL — 2025",
         details: {
-        bio: "I’m Yash Patkar, a Backend Software Engineer with hands-on experience working on production APIs using Python and Django REST Framework. I focus on schema design, query optimization, and building reliable backend systems, and I’m comfortable contributing to full-stack features with Vue.js and React when required. I also explore practical LLM integrations to improve development workflows.",
+        bio: "Software Engineer with 1+ year of hands-on experience in automating, developing backend and frontend applications.",
         education: "B.Sc. IT — D. G. Ruparel College (2022–2025)",
-        gpa: "9.4 / 10",
-        address: "Mumbai, Maharashtra, India 400016",
+        gpa: "9.40 / 10",
+        address: "Mumbai - 400016, Maharashtra, INDIA",
         achievements: [
-            "1st Place — DotTech Hackathon 2025 (DGRUPAREL)",
-            "2nd Place — Code Relay Event 2025 (VPPCOEVA)"
+            "1st Place — DotTech Hackathon",
+            "2nd Place — Code Relay Event"
         ]
         }
     },
@@ -19,14 +19,15 @@ const CONTACT = {
     skills: {
         title: "TECHNICAL ARSENAL",
         hook: "Designing scalable APIs and data-driven backend systems.",
-        categories: ["Languages", "Backend", "Databases", "Frontend", "Tools", "Others"], 
+        categories: ["Languages", "Backend", "Databases", "Frontend", "DevOps & Tools", "Backend Concepts", "AI / LLM"], 
         details: [
-        { cat: "Languages", items: "Python, Java, C, C++, JavaScript," },
-        { cat: "Backend", items: "Django REST Framework, Flask, FastAPI, Node.js, Express.js" },
+        { cat: "Languages", items: "Python, JavaScript, Java, C/C++" },
+        { cat: "Backend", items: "Django, Django REST Framework, Flask, FastAPI, Celery, Node.js, Express.js" },
         { cat: "Databases", items: "PostgreSQL, MySQL, SQLite, Redis" },
-        { cat: "Frontend", items: "Vue.js, React.js, HTML, CSS, Tailwind, Bootstrap" },
-        { cat: "Tools", items: "Git, GitHub, Linux, Docker, Postman" },
-        { cat: "Others", items: "REST APIs, SQL, JSON, Data Structures & Algorithms, OOP, API Performance, Debugging, LangChain" }        
+        { cat: "Frontend", items: "React.js, Vue.js, HTML, CSS, Tailwind CSS, Bootstrap, Jinja Templates" },
+        { cat: "DevOps & Tools", items: "Docker, Git, GitHub, Linux, Postman, Render, Vercel, AWS (Basic)" },
+        { cat: "Backend Concepts", items: "REST APIs, Authentication (JWT), ORM, Query Optimization, Schema Design, Rate Limiting" },
+        { cat: "AI / LLM", items: "RAG, LlamaIndex, Vector Search, LLM Integration" }        
         ]
     },
 
@@ -34,54 +35,44 @@ const CONTACT = {
         { 
             company: "Kuvaka Tech", 
             role: "Backend Engineer", 
-            time: "June – July 2025", 
+            time: "June 2025 – July 2025", 
             hook: "Backend development for an email verification system.", 
             details: [ 
-            "Developed backend features using Django and REST APIs for an email verification pipeline.",
-            "Set up asynchronous background processing using Celery for large verification tasks.",
-            "Refactored ORM queries to improve CRUD performance and maintain safe database updates.",
-            "Integrated external validation APIs with retry handling for SMTP checks.",
-            "Supported manual testing and issue reporting during early development phases."
+            "Built email verification APIs using Python programming and Django REST Framework, integrating third-party verification APIs with multi-step SMTP validation logic.",
+            "Implemented asynchronous background processing using Celery for bulk jobs, retries, and cleanup.",
+            "Applied rate limiting, and API debugging to improve system reliability."
             ]
         },
         { 
             company: "Levaze Digital", 
-            role: "Web Developer", 
-            time: "April – June 2024", 
-            hook: "Flask backend development for a blogging platform.",
+            role: "Full Stack Web Developer", 
+            time: "April 2024 – June 2024", 
+            hook: "Server-side rendered web features development.",
             details: [
-            "Built backend modules for a Flask-based blogging system including authentication and OTP flows.",
-            "Developed REST API endpoints for user management and content features.",
-            "Optimized ORM filters to reduce redundant database queries and improve API performance.",
-            "Collaborated with frontend teammates using Git and GitHub for smooth API integration."
+            "Developed server-side rendered web features using Python, Flask with Jinja templates, HTML, CSS, and JavaScript.",
+            "Implemented authentication features including OTP flows and Google OAuth-based signup and login.",
+            "Used Git and GitHub for version control, branching, and collaborative development."
             ]
         }
     ],
 
     projects: [
         { 
-            name: "Karzo Ride", 
-            tech: "Django REST Framework, PostgreSQL, Vue.js", 
-            hook: "Optimizing Ride Search Performance",
-            desc: "Backend APIs for ride booking with improved query performance.",
-            fullDetails: "Detected slow ride-matching queries and improved performance using `select_related` to reduce unnecessary ORM joins. Reduced API calls using debounced search logic and optimized endpoint handling. Built REST APIs for rides, bookings, authentication, and email validation.",
+            name: "ClassAccess", 
+            tech: "Python, Django REST Framework, React, PostgreSQL", 
+            hook: "AI Powered Classroom Platform",
+            desc: "Production-ready AI-powered classroom platform with RAG pipeline and LLM integration.",
+            fullDetails: "Built Python REST APIs with JWT authentication and role-based access control (RBAC). Integrated Supabase storage with signed URLs for file upload and access management. Implemented RAG pipeline enabling semantic search, page-level retrieval, chunking, and embedding-based retrieval using cloud-based vector storage for scalable AI workflows. Built an LLM-powered question answering system with text preprocessing and metadata handling, solving low-context retrieval issues and achieving 3× faster RAG processing per PDF. Improved system performance and reliability using Redis caching, rate limiting, background jobs, and Docker based deployment on Render and Vercel.",
+            link: "",
+            status: "Prod, Live"
+        },
+        { 
+            name: "Karzo", 
+            tech: "Python, Django REST Framework, Vue.js, MySQL", 
+            hook: "Event Ride Sharing Platform",
+            desc: "REST APIs for event-based ride sharing with optimized query performance.",
+            fullDetails: "Built REST APIs using Python programming and Django REST Framework with JWT authentication. Resolved N+1 query issues using Django ORM. Reduced redundant search API calls using debouncing (10 to 2-4 per request cycle). Integrated OpenAI LLM for automated event description generation.",
             link: "https://github.com/yashpatkar/karzo"
-        },
-        { 
-            name: "Turf Booking", 
-            tech: "Node.js, Express.js, Sequelize", 
-            hook: "Reliable Slot Booking APIs",
-            desc: "REST backend for secure slot booking and authentication.",
-            fullDetails: "Built APIs for turf listings, availability checks, bookings, and authentication using Express and Sequelize. Designed clear CRUD models and refined validation logic to reduce redundant database queries during slot checks.",
-            link: "https://github.com/YashPatkar/TurfBooking",
-        },
-        { 
-            name: "PDF Viewer", 
-            tech: "Django Sessions", 
-            hook: "Secure In-Browser PDF Viewing",
-            desc: "Session-based system for viewing PDFs without downloads.",
-            fullDetails: "Built a Django session authentication system allowing students to securely view PDFs directly in the browser. Reduced bandwidth usage by avoiding file downloads and serving PDFs for in-browser rendering.",
-            link: "https://github.com/YashPatkar/pdf_viewer"
         }
     ]
 };

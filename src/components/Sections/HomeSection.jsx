@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion';
 import { ChevronUp, Briefcase } from 'lucide-react';
 import FadeIn from '../Layout/FadeIn'; // Import the helper we just made
 import CONTACT from '../data/resume';

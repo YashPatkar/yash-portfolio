@@ -121,42 +121,62 @@ const BottomDrawer = ({ isOpen, setIsOpen, currentSection, data }) => {
         return (
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {data.skills.details.map((group, i) => (
-              <div key={i} className="bg-white/5 p-6 rounded-xl">
-                <h4 className="text-accent font-bold mb-2">{group.cat}</h4>
-                <p className="text-white/80 font-mono text-sm">{group.items}</p>
-              </div>
+              <motion.div 
+                key={i} 
+                className="bg-white/5 p-6 rounded-xl border border-white/5 hover:border-accent/30 hover:bg-white/10 transition-all group"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: i * 0.1 }}
+                whileHover={{ scale: 1.02 }}
+              >
+                <h4 className="text-accent font-bold mb-3 group-hover:text-accent/80 transition-colors">{group.cat}</h4>
+                <p className="text-white/80 font-mono text-sm leading-relaxed group-hover:text-white/90 transition-colors">{group.items}</p>
+              </motion.div>
             ))}
           </div>
         );
       case "projects":
         return (
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {data.projects.map((p, i) => (
-              <div
+              <motion.div
                 key={i}
-                className="bg-white/5 p-6 rounded-2xl border border-white/5"
+                className="bg-white/5 p-6 rounded-2xl border border-white/5 hover:border-accent/30 hover:bg-white/10 transition-all group cursor-pointer"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: i * 0.1 }}
+                whileHover={{ scale: 1.02, y: -4 }}
               >
                 <div className="font-mono text-accent text-xs mb-2">
                   {p.tech}
                 </div>
                 <div className="flex justify-between items-center mb-4">
-                  <h4 className="text-white font-bold text-xl">{p.name}</h4>
-                  <div className="mt-auto">
-                    <a
-                      href={p.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1 md:gap-2 text-[10px] md:text-xs font-bold text-white bg-white/10 hover:bg-white/20 px-2 py-1 md:px-4 md:py-2 rounded-md md:rounded-lg transition-colors"
-                    >
-                      <Github size={12} /> OPEN
-                    </a>
+                  <div className="flex-1">
+                    <h4 className="text-white font-bold text-xl">{p.name}</h4>
+                    {p.status && (
+                      <div className="text-xs text-accent font-mono mt-1">
+                        {p.status}
+                      </div>
+                    )}
                   </div>
+                  {p.link && (
+                    <div className="mt-auto ml-4">
+                      <a
+                        href={p.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1 md:gap-2 text-[10px] md:text-xs font-bold text-white bg-white/10 hover:bg-white/20 px-2 py-1 md:px-4 md:py-2 rounded-md md:rounded-lg transition-colors"
+                      >
+                        <Github size={12} /> OPEN
+                      </a>
+                    </div>
+                  )}
                 </div>
-                <div className="w-full h-px bg-white/10 mb-3"></div>
-                <p className="text-white/70 text-sm leading-relaxed">
+                <div className="w-full h-px bg-white/10 mb-3 group-hover:bg-accent/30 transition-colors"></div>
+                <p className="text-white/70 text-sm leading-relaxed group-hover:text-white/90 transition-colors">
                   {p.fullDetails}
                 </p>
-              </div>
+              </motion.div>
             ))}
           </div>
         );
@@ -164,22 +184,34 @@ const BottomDrawer = ({ isOpen, setIsOpen, currentSection, data }) => {
         return (
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {data.experience.map((exp, i) => (
-              <div key={i}>
+              <motion.div 
+                key={i}
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: i * 0.15 }}
+                className="bg-white/5 p-6 rounded-xl border border-white/5 hover:border-accent/30 hover:bg-white/10 transition-all"
+              >
                 <h3 className="text-2xl font-bold text-white mb-1">
                   {exp.company}
                 </h3>
                 <div className="font-mono text-accent text-sm mb-4">
                   {exp.role}
                 </div>
-                <ul className="space-y-3">
+                <ul className="space-y-3 mt-4">
                   {exp.details.map((point, j) => (
-                    <li key={j} className="flex gap-3 text-white/70 text-sm">
-                      <span className="text-accent mt-1">▹</span>
-                      {point}
-                    </li>
+                    <motion.li 
+                      key={j} 
+                      className="flex gap-3 text-white/70 text-sm group/item"
+                      initial={{ opacity: 0, x: -10 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ delay: i * 0.15 + j * 0.1 }}
+                    >
+                      <span className="text-accent mt-1 group-hover/item:text-accent/80 transition-colors">▹</span>
+                      <span className="group-hover/item:text-white/90 transition-colors">{point}</span>
+                    </motion.li>
                   ))}
                 </ul>
-              </div>
+              </motion.div>
             ))}
           </div>
         );
@@ -362,28 +394,27 @@ const BottomDrawer = ({ isOpen, setIsOpen, currentSection, data }) => {
         </motion.button>
       </div>
 
-      <AnimatePresence>
+            <AnimatePresence>
         {isOpen && (
           <motion.div
             initial={{ y: "100%" }}
             animate={{ y: 0 }}
             exit={{ y: "100%" }}
-            transition={{ duration: 0.1, ease: "easeInOut" }}
+            transition={{ type: "spring", damping: 30, stiffness: 300 }}
             // UPDATED CLASSES:
             // 1. Dynamic Height: h-[80vh] when full, h-[50vh] when minimized (better contrast)
             // 2. Glow Effect: shadow-[0_0_50px...] adds the "focused" look
             // 3. Border: border-white/20 normally, border-accent/30 when fullscreen to highlight it
             className={`
                             fixed bottom-0 left-4 right-4 md:left-10 md:right-10 
-                            bg-[#0A0A0A]/95 backdrop-blur-[10px]
+                            bg-[#0A0A0A]/98 backdrop-blur-[10px]
                             border-t border-x 
                             ${
                               isFullScreen
-                                ? "border-white/20 shadow-[0_0_50px_rgba(34,197,94,0.15)] h-[90vh]"
-                                : "border-white/20 h-[50vh]"
+                                ? "border-accent/30 shadow-[0_0_50px_rgba(34,197,94,0.25)] h-[90vh]"
+                                : "border-white/20 shadow-[0_0_30px_rgba(34,197,94,0.1)] h-[50vh]"
                             }
-                            z-40 p-8 md:p-12 
-                            shadow-[0_0_50px_rgba(34,197,94,0.15)]
+                            z-40 p-6 md:p-8 lg:p-12 
                             rounded-t-[40px] overflow-hidden 
                             transition-all duration-500 ease-in-out
                         `}
