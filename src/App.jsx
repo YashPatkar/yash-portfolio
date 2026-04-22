@@ -40,7 +40,7 @@ const App = () => {
             speed={0.7}
           />
         </div>
-        <div className="fixed inset-0 z-0 pointer-events-none bg-[radial-gradient(ellipse_at_center,transparent_0%,rgba(0,0,0,0.45)_55%,rgba(0,0,0,0.85)_100%)]" />
+        <div className="fixed inset-0 z-0 pointer-events-none bg-[radial-gradient(ellipse_at_center,var(--tw-gradient-stops))] from-transparent via-black/45 to-black/85" />
 
         {/* 2. Foreground Layer (Scrollable) */}
         <ClickSpark sparkColor="#7df9ff" sparkSize={9} sparkRadius={20} sparkCount={10} duration={420}>
