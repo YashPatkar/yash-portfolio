@@ -4,6 +4,7 @@ import BottomDrawer from './Layout/BottomDrawer';
 import CONTACT from './data/resume';
 import ScrollProgress from './Layout/ScrollProgress'; 
 import Navigation from './Layout/Navigation';
+import ScrollVelocity from './Animations/ScrollVelocity';
 
 // Import Section Components
 import ContactSection from './Sections/ContactSection';
@@ -14,7 +15,7 @@ import HomeSection from './Sections/HomeSection';
 
 const MainContent = () => {
     const targetRef = useRef(null);
-    const { scrollYProgress } = useScroll({ target: targetRef });
+    const { scrollYProgress } = useScroll();
     
     // FIX 1: Exact calculation for 5 sections (-400vw moves 4 screens left)
     const x = useTransform(scrollYProgress, [0, 1], ["0%", "-400vw"]);
@@ -54,6 +55,14 @@ const MainContent = () => {
         <div className="relative">
             <ScrollProgress />
             <Navigation currentSection={currentSection} />
+            <div className="fixed left-0 right-0 bottom-24 z-30 pointer-events-none opacity-45">
+                <ScrollVelocity
+                    texts={['BACKEND SYSTEMS // SCALABLE APIs // PERFORMANCE // RELIABILITY //']} 
+                    velocity={22}
+                    className="text-white/30"
+                    parallaxStyle={{ borderTop: '1px solid rgba(255,255,255,0.08)', borderBottom: '1px solid rgba(255,255,255,0.08)', padding: '0.35rem 0' }}
+                />
+            </div>
 
             {/* FLOATING NAVIGATION BUTTONS */}
             {!showDetails && (

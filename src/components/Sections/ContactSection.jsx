@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { Download, Cpu, Github, Linkedin, Mail } from 'lucide-react';
 import FadeIn from '../Layout/FadeIn'; // Import the helper we just made
+import BlurText from '../Animations/BlurText';
 
 const ContactSection = ({ setShowDetails }) => {
     return (
@@ -8,9 +9,16 @@ const ContactSection = ({ setShowDetails }) => {
             <FadeIn>
                 <div className="text-center z-10">
                     <div className="font-mono text-accent mb-4">READY TO DEPLOY?</div>
-                    <h2 className="font-display text-[10vw] leading-none text-white mb-8 hover:text-white/80 transition-colors cursor-pointer">
-                        <a href="mailto:yash.patkar2004@gmail.com">LET'S TALK</a>
-                    </h2>
+                    <a href="mailto:yash.patkar2004@gmail.com" className="inline-block hover:text-white/80 transition-colors cursor-pointer">
+                        <BlurText
+                            text="LET'S TALK"
+                            as="h2"
+                            animateBy="chars"
+                            direction="top"
+                            delay={55}
+                            className="font-display text-[10vw] leading-none text-white mb-8"
+                        />
+                    </a>
                     
                     <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center mb-10">
                         <motion.a 

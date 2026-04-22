@@ -2,6 +2,8 @@ import { motion } from 'framer-motion';
 import { Terminal, Layers } from 'lucide-react';
 import CONTACT from '../data/resume';
 import FadeIn from '../Layout/FadeIn';
+import GlareHover from '../Animations/GlareHover';
+import BlurText from '../Animations/BlurText';
 
 const SkillsSection = ({ setShowDetails }) => {
     return (
@@ -13,9 +15,14 @@ const SkillsSection = ({ setShowDetails }) => {
                         <Terminal className="text-accent" size={32} />
                         <span className="font-mono text-accent text-sm tracking-widest">TECHNICAL STACK</span>
                     </div>
-                    <div className="text-4xl md:text-6xl font-bold text-white mb-8">
-                        {CONTACT.skills.hook}
-                    </div>
+                    <BlurText
+                        text={CONTACT.skills.hook}
+                        as="h3"
+                        animateBy="words"
+                        direction="top"
+                        delay={80}
+                        className="text-4xl md:text-6xl font-bold text-white mb-8"
+                    />
                     
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 mb-10">
                         {CONTACT.skills.categories.map((cat, i) => (
@@ -29,7 +36,7 @@ const SkillsSection = ({ setShowDetails }) => {
                                 whileHover={{ x: 4 }}
                             >
                                 <motion.div 
-                                    className="absolute -left-[2px] top-0 bottom-0 w-0.5 bg-accent opacity-0 group-hover:opacity-100 transition-opacity"
+                                    className="absolute -left-0.5 top-0 bottom-0 w-0.5 bg-accent opacity-0 group-hover:opacity-100 transition-opacity"
                                     layoutId={`skill-${i}`}
                                 />
                                 <div className="text-white/40 font-mono text-sm mb-2 group-hover:text-accent transition-colors">0{i+1}</div>
@@ -38,26 +45,37 @@ const SkillsSection = ({ setShowDetails }) => {
                         ))}
                     </div>
 
-                    <motion.button 
-                        onClick={() => setShowDetails(true)} 
-                        className="group border border-white/20 bg-white/5 hover:bg-white/10 text-white px-8 py-4 font-bold rounded-lg transition-all flex items-center gap-4 relative overflow-hidden"
-                        whileHover={{ scale: 1.02 }}
-                        whileTap={{ scale: 0.98 }}
+                    <GlareHover
+                        width="fit-content"
+                        height="fit-content"
+                        background="rgba(255,255,255,0.02)"
+                        borderRadius="0.6rem"
+                        borderColor="rgba(255,255,255,0.20)"
+                        glareColor="#7df9ff"
+                        glareOpacity={0.16}
+                        glareSize={220}
                     >
-                        <span className="relative z-10">VIEW TECHNICAL SKILLS</span>
-                        <motion.div 
-                            className="bg-accent text-black rounded-full p-1 relative z-10"
-                            whileHover={{ rotate: 45 }}
-                            transition={{ type: "spring", stiffness: 400, damping: 10 }}
+                        <motion.button
+                            onClick={() => setShowDetails(true)}
+                            className="group border border-white/20 bg-transparent hover:bg-white/10 text-white px-8 py-4 font-bold rounded-lg transition-all flex items-center gap-4 relative overflow-hidden"
+                            whileHover={{ scale: 1.02 }}
+                            whileTap={{ scale: 0.98 }}
                         >
-                            <Layers size={20} />
-                        </motion.div>
-                        <motion.div
-                            className="absolute inset-0 bg-gradient-to-r from-accent/0 via-accent/10 to-accent/0"
-                            animate={{ x: ['-100%', '100%'] }}
-                            transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
-                        />
-                    </motion.button>
+                            <span className="relative z-10">VIEW TECHNICAL SKILLS</span>
+                            <motion.div
+                                className="bg-accent text-black rounded-full p-1 relative z-10"
+                                whileHover={{ rotate: 45 }}
+                                transition={{ type: 'spring', stiffness: 400, damping: 10 }}
+                            >
+                                <Layers size={20} />
+                            </motion.div>
+                            <motion.div
+                                className="absolute inset-0 bg-linear-to-r from-accent/0 via-accent/10 to-accent/0"
+                                animate={{ x: ['-100%', '100%'] }}
+                                transition={{ duration: 3, repeat: Infinity, ease: 'linear' }}
+                            />
+                        </motion.button>
+                    </GlareHover>
                 </FadeIn>
             </div>
         </section>

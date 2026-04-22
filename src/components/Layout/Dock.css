@@ -1,0 +1,64 @@
+.dock-outer {
+  margin: 0;
+  display: flex;
+  max-width: 100%;
+  align-items: center;
+}
+
+.dock-panel {
+  display: flex;
+  align-items: center;
+  width: fit-content;
+  gap: 0.4rem;
+  border-radius: 0.9rem;
+  background: linear-gradient(90deg, rgba(9, 16, 24, 0.85), rgba(6, 20, 19, 0.8));
+  border: 1px solid rgba(125, 249, 255, 0.18);
+  padding: 0.18rem 0.3rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+}
+
+.dock-item {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.62rem;
+  background: rgba(2, 10, 18, 0.45);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  outline: none;
+  transition: border-color 0.25s ease;
+}
+
+.dock-item:hover {
+  border-color: rgba(125, 249, 255, 0.35);
+}
+
+.nav-dock-item-active {
+  border-color: rgba(34, 197, 94, 0.45);
+  background: rgba(34, 197, 94, 0.12);
+  box-shadow: inset 0 0 0 1px rgba(34, 197, 94, 0.15), 0 8px 22px rgba(0, 0, 0, 0.25);
+}
+
+.dock-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dock-label {
+  position: absolute;
+  top: -1.8rem;
+  left: 50%;
+  width: fit-content;
+  white-space: pre;
+  border-radius: 0.35rem;
+  border: 1px solid rgba(125, 249, 255, 0.2);
+  background-color: rgba(4, 10, 16, 0.95);
+  padding: 0.1rem 0.45rem;
+  font-size: 0.65rem;
+  letter-spacing: 0.08em;
+  color: #d6f8ff;
+  transform: translateX(-50%);
+}

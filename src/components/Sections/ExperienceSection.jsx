@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Server } from 'lucide-react';
 import FadeIn from '../Layout/FadeIn'; // Import the helper we just made
+import BlurText from '../Animations/BlurText';
 import CONTACT from '../data/resume';
 
 const ExperienceSection = () => {
@@ -11,7 +12,14 @@ const ExperienceSection = () => {
         <section className="h-screen w-screen flex items-center justify-center px-10 md:px-32 shrink-0 border-r border-white/5">
             <div className="max-w-5xl">
                 <FadeIn>
-                    <h2 className="font-display text-6xl md:text-8xl text-white mb-16">Work</h2>
+                    <BlurText
+                        text="Work"
+                        as="h2"
+                        animateBy="chars"
+                        direction="top"
+                        delay={70}
+                        className="font-display text-6xl md:text-8xl text-white mb-16"
+                    />
                 </FadeIn>
                 <div className="space-y-12 border-l border-white/10 pl-8 relative">
                     <div className="absolute -left-[2px] top-0 bottom-0 w-0.5 bg-gradient-to-b from-accent via-accent/50 to-transparent opacity-30"></div>

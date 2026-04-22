@@ -1,6 +1,8 @@
 import { motion } from 'framer-motion';
 import { ChevronUp, Briefcase } from 'lucide-react';
 import FadeIn from '../Layout/FadeIn'; // Import the helper we just made
+import DecryptedText from '../Animations/DecryptedText';
+import BlurText from '../Animations/BlurText';
 import CONTACT from '../data/resume';
 
 
@@ -22,15 +24,39 @@ const HomeSection = ({ setShowDetails }) => {
                     </div> */}
                 </div>
 
-                <h1 className="font-display text-[15vw] leading-[0.8] text-white">
-                    YASH<br/><span className="inline-block mt-5">PATKAR</span><span className="text-accent">.</span>
-                </h1>
+                <div className="font-display text-[15vw] leading-[0.8] text-white">
+                    <BlurText
+                        text="YASH"
+                        as="h1"
+                        animateBy="chars"
+                        direction="top"
+                        delay={55}
+                        className="leading-[0.8]"
+                    />
+                    <BlurText
+                        text="PATKAR."
+                        as="h1"
+                        animateBy="chars"
+                        direction="top"
+                        delay={55}
+                        className="leading-[0.8] mt-5"
+                    />
+                </div>
                 
                 <div className="mt-8 font-mono text-white/50 text-xl md:text-2xl flex items-center gap-2">
                     <div className="animate-pulse">
                         <div className="w-3 h-3 bg-red-500 rounded-full"></div>
                     </div>
-                    SOFTWARE ENGINEER
+                    <DecryptedText
+                        text="SOFTWARE ENGINEER"
+                        speed={45}
+                        maxIterations={12}
+                        sequential={true}
+                        revealDirection="start"
+                        animateOn="hover"
+                        className="text-white/70"
+                        encryptedClassName="text-accent/80"
+                    />
                 </div>
                 
                 <div className="mt-12 flex items-center gap-6">
