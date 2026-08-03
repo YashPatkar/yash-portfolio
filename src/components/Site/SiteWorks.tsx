@@ -17,6 +17,8 @@ interface Row {
 const THEMES: Record<string, { theme: string; tag: string }> = {
   ClassAccess: { theme: 'lumen', tag: 'Classrooms, supercharged' },
   Karzo: { theme: 'nocturne', tag: 'Rides, routed right' },
+  SpeakUp: { theme: 'halo', tag: 'Spin, speak, review' },
+  'Likho Hub': { theme: 'field', tag: 'Agents, coordinated' },
 };
 
 const ROWS: Row[] = CONTACT.projects.map((p) => ({

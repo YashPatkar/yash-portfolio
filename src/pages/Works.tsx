@@ -9,6 +9,8 @@ const EMAIL = 'yash.patkar2004@gmail.com';
 const THEMES: Record<string, { theme: string; tag: string }> = {
   ClassAccess: { theme: 'lumen', tag: 'Classrooms, supercharged' },
   Karzo: { theme: 'nocturne', tag: 'Rides, routed right' },
+  SpeakUp: { theme: 'halo', tag: 'Spin, speak, review' },
+  'Likho Hub': { theme: 'field', tag: 'Agents, coordinated' },
 };
 
 const Works = () => {
@@ -81,6 +83,17 @@ const Works = () => {
                     ))}
                   </div>
                   <div className="aria-case-actions">
+                    {p.liveUrl && (
+                      <a
+                        className="aria-pill"
+                        href={p.liveUrl}
+                        target="_blank"
+                        rel="noreferrer"
+                        data-cursor="link"
+                      >
+                        View live ↗
+                      </a>
+                    )}
                     {p.link && (
                       <a
                         className="aria-pill"
